@@ -1,0 +1,19 @@
+Build custom firmware for keyboard.io model atreus
+
+
+doc: https://docs.qmk.fm/#/newbs_building_firmware_workflow
+
+Roughly how it works:
+
+- use https://config.qmk.fm/ to load atreus.json
+
+- adjust what is needed, possibly compile firmware and flash until done
+
+- download the updated json file in this repo
+
+- commit and push to github, github workflow will build the firmware and produce it as artifact
+
+
+Rationale:
+- provide backup for local setup which is fragile on powerpc64le / guix
+- have verification: take same json file, produce artifact and compare with locally build firwmare (deterministic?]
