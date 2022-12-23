@@ -40,3 +40,8 @@ Keymapping doc:
 :PROPERTIES:
 :CREATED:  [2022-12-23 Fri 18:19]
 :END:
+The right alt key is actually alt-gr so that maps to =C-ä= instead of =C-M-a=
+
+Either:
+- map C-ä to the same function as C-M-a
+-
