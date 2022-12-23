@@ -35,3 +35,8 @@ Keymapping doc:
 - Layer 1 :: Number keys, navigation and bracketing
 - Layer 2 :: Function layer, macros
 - Layer 3 :: Specials and dangerous key combinations\n
+
+** TODO
+:PROPERTIES:
+:CREATED:  [2022-12-23 Fri 18:08]
+:END:
