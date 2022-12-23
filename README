@@ -17,3 +17,11 @@ Roughly how it works:
 Rationale:
 - provide backup for local setup which is fragile on powerpc64le / guix
 - have verification: take same json file, produce artifact and compare with locally build firwmare (deterministic?]
+
+
+Keymapping doc:
+
+Layer 0: Base layer
+Layer 1: Number keys, navigation and bracketing
+Layer 2: Function layer, macros
+Layer 3: Specials and dangerous key combinations\n
