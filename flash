@@ -1,0 +1,19 @@
+# Flash the generated hex file
+
+# Step that I want:
+# 1. put the board in bootloader mode
+# 2. simulate flash (-n flag to avrdude)
+# 3. check for continue
+# 4. put the board in bootloader mode
+# 5. do flash for real
+
+DEVICE=/dev/ttyACM0
+
+echo "Put the device in bootloader mode; hold ESC and press K, keep pressing ESC"
+# This only works with QMK, not with Kaleidoscope
+udevadm wait $DEVICE
+
+
+# This works, manually unplugging the board and plugging back in with ESC pressed
+echo "Flashing...."
+avrdude -p atmega32u4 -c avr109 -P $DEVICE -U flash:w:qmk_firmware/keyboardio_atreus_mrb.hex

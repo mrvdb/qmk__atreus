@@ -1,0 +1,9 @@
+# Setup the guix shell to work with
+guix shell \
+     --development \
+     --network \
+     --container \
+     --manifest=manifest.scm -- sh -c \
+     "qmk config user.qmk_home=qmk_firmware ; \
+     qmk setup -n ;\
+     qmk compile atreus.json ;"
