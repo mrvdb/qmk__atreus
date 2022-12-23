@@ -36,3 +36,7 @@ Keymapping doc:
 - Layer 2 :: Function layer, macros
 - Layer 3 :: Specials and dangerous key combinations\n
 
+* TODO Make C-M-a easier
+:PROPERTIES:
+:CREATED:  [2022-12-23 Fri 18:19]
+:END:
