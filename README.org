@@ -1,0 +1,37 @@
+* Build custom firmware for [[https://shop.keyboard.io/collections/keyboardio-atreus][keyboard.io model Atreus]] in two ways
+
+1. Using a github action which takes  =atreus.json= and builds binary firmware
+2. A script (=build=) which uses a GUIX container to build it locally using qmk
+
+
+
+** Ad 1.
+
+doc: https://docs.qmk.fm/#/newbs_building_firmware_workflow
+
+Roughly how it works:
+
+- use https://config.qmk.fm/ to load atreus.json
+
+- adjust what is needed, possibly compile firmware and flash until done
+
+- download the updated json file in this repo
+
+- commit and push to github, github workflow will build the firmware and produce it as artifact
+
+
+** Ad 2
+
+=build= shell script spawns a GUIX shell and builds firmware locally using =manifest.scm=
+
+* Rationale:
+- provide backup for local setup which is fragile on powerpc64le / guix
+- have verification: take same json file, produce artifact and compare with locally build firwmare (deterministic?]
+
+* Misc
+Keymapping doc:
+
+- Layer 0 :: Base layer
+- Layer 1 :: Number keys, navigation and bracketing
+- Layer 2 :: Function layer, macros
+- Layer 3 :: Specials and dangerous key combinations\n
