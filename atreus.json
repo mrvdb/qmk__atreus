@@ -3,7 +3,7 @@
   "notes": "",
   "documentation": "QMK configuration for keyboardio/atreus",
   "keyboard": "keyboardio/atreus",
-  "keymap": "mrb",
+  "keymap": "mrvdb",
   "macros": [
       ["marcel@van-der-boom.nl"],
       ["marcel@hsdev.com"],

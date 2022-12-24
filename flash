@@ -16,4 +16,4 @@ udevadm wait $DEVICE
 
 # This works, manually unplugging the board and plugging back in with ESC pressed
 echo "Flashing...."
-avrdude -p atmega32u4 -c avr109 -P $DEVICE -U flash:w:qmk_firmware/keyboardio_atreus_mrb.hex
+avrdude -p atmega32u4 -c avr109 -P $DEVICE -U flash:w:qmk_firmware/keyboardio_atreus_mrvdb.hex
