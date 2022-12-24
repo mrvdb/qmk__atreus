@@ -68,6 +68,7 @@ If however put in code, it's harder to discover (if using the json keymap)
 
 Notably the Z and / key which double up as left and right shift modifier when hold have some issues:
 
-- when used with other modifiers like Layer modifiers the order in which the modifiers are typed seems to be important, which sucks
+- +when used with other modifiers like Layer modifiers the order in which the modifiers are typed seems to be important, which sucks+
+  Solved with transparent SHIFT keys in layer 1 for the most part.
 
   https://docs.qmk.fm/#/tap_hold has lots of informatieon.
