@@ -4,7 +4,6 @@
 2. A script (=build=) which uses a GUIX container to build it locally using qmk
 
 
-
 ** Ad 1.
 
 doc: https://docs.qmk.fm/#/newbs_building_firmware_workflow
