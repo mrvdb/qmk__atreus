@@ -42,7 +42,7 @@ Keymapping doc:
 The right alt key is actually alt-gr so that maps to =C-ä= instead of =C-M-a=
 
 Either:
-- map C-ä to the sam
+- map C-ä to the same function as C-M-a
 
 * TODO Move reset-keyboard into code instead of keymap
 :PROPERTIES:
