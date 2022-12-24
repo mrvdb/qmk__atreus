@@ -2,16 +2,14 @@ LTO_ENABLE		= yes
 KEY_OVERRIDE_ENABLE	= yes
 AUTO_SHIFT_ENABLE	= yes
 
-SRC += source.c
-
 ifeq ($(strip $(LEADER_ENABLE)), yes)
-	SRC += leader.c
+	SRC += src/leader.c
 endif
 
 ifeq ($(strip $(KEY_OVERRIDE_ENABLE)), yes)
-	SRC += override.c
+	SRC += src/override.c
 endif
 
 ifeq ($(strip $(AUTO_SHIFT_ENABLE)), yes)
-	SRC += autoshift.c
+	SRC += src/autoshift.c
 endif
