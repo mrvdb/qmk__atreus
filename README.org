@@ -72,3 +72,6 @@ Notably the Z and / key which double up as left and right shift modifier when ho
   Solved with transparent SHIFT keys in layer 1 for the most part.
 
   https://docs.qmk.fm/#/tap_hold has lots of informatieon.
+
+-
+  afjdk;adfjk;
