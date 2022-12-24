@@ -44,3 +44,8 @@ The right alt key is actually alt-gr so that maps to =C-ä= instead of =C-M-a=
 
 Either:
 - map C-ä to the sam
+
+* TODO Can we set type
+:PROPERTIES:
+:CREATED:  [2022-12-24 Sat 17:21]
+:END:
