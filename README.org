@@ -44,15 +44,6 @@ The right alt key is actually alt-gr so that maps to =C-ä= instead of =C-M-a=
 Either:
 - map C-ä to the sam
 
-* TODO Can we set rate and delay with QMK?
-:PROPERTIES:
-:CREATED:  [2022-12-24 Sat 17:21]
-:END:
-
-Basically emulate: xset r rate 200 50
-
-which I always have to set after keyboard has connected, could probably be in an udev-script.
-
 * TODO Move reset-keyboard into code instead of keymap
 :PROPERTIES:
 :CREATED:  [2022-12-24 Sat 17:23]
