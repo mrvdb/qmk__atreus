@@ -213,7 +213,7 @@
                              python-milc
                              python-setuptools
                              python-hjson
-                             python-jsonschema-next ;Need this to preven 3.2.0 egg info going into the store which borks sanity-check
+                             python-jsonschema-next ;Need this to prevent 3.2.0 egg info going into the store which borks sanity-check
                              python-pygments
                              python-dotty-dict))
     (home-page "https://qmk.fm/")
