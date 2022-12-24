@@ -49,3 +49,7 @@ Either:
 :PROPERTIES:
 :CREATED:  [2022-12-24 Sat 17:21]
 :END:
+
+Basically emulate: xset r rate 200 50
+
+which I always have to set after keyboard has connected, could probably be in an udev-script.
