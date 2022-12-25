@@ -41,6 +41,7 @@ Here's an attempt to jam everything in one picture.
 
 [[file:res/layout.png]]
 
+Image produced with: https://www.keyboard-layout-editor.com/
 Legends:
 - lower left is normal key behaviour
 - top left is the shifted normal
@@ -55,7 +56,8 @@ Features implemented:
 - numeric keys are autoshifted; saves awkward key combinations.
 - leader configuration for =KC_APP= is defined, but not used. Not entirely sure how I want to use it yet.
 - =Shift-(= and =Shift-)= are overridden to give '<' and '>' so I can have a logical bracketing group of 4 keys in Layer 1.
-
+- there are 5 macro keys, 3 are fixed and defined in the firmware, 2 (M3 and M4) are dynamic and can be recorded using the R3 and R4 keys. steps: R4, ...record..., R4 M4 -> plays recorded keys back.
+-
 ** TODO-list
 *** TODO Make C-M-a easier to type
 :PROPERTIES:
