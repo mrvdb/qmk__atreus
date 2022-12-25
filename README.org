@@ -2,7 +2,7 @@
 
 I build the qmk firmware in two ways:
 
-1. Using a github action workflo which takes  =atreus.json= and builds binary firmware on each commit.
+1. Using a github action workflow which takes  =atreus.json= and builds binary firmware on each commit.
 2. A script (=build=) which uses a GUIX container to build it locally using qmk
 
 The rational for having two ways of building the firmware is to provide a backup and reference for the local setup as it is quite fragile still on my POWER9 powerpc64le machine. Another reason is verification, is the firmware built locally the same as the one built remotely.
