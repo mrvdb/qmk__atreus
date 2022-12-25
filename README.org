@@ -24,7 +24,7 @@ Roughly how it works:
 
 ** Ad 2. GUIX container based local build
 
-The =[[/build][build]]= shell script spawns a GUIX shell and builds firmware locally using =manifest.scm=
+The [[https://github.com/mrvdb/qmk_atreus/blob/main/build][build]] shell script spawns a GUIX shell and builds firmware locally using [[https://github.com/mrvdb/qmk_atreus/blob/main/manifest.scm][manifest.scm]]
 
 Obviously, you'll need a working GUIX installation for this to be useful.
 
@@ -88,9 +88,6 @@ Notably the Z and / key which double up as left and right shift modifier when ho
   Solved with transparent SHIFT keys in layer 1 for the most part.
 
   https://docs.qmk.fm/#/tap_hold has lots of informatieon.
-
--
-  afjdk;adfjk;
 
 *** TODO Include some images/ascii art of the layers layout
 :PROPERTIES:
