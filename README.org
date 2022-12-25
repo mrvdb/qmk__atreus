@@ -77,18 +77,6 @@ Possible solutions:
 Feels more in place in firmware code than in the keymapping, although factually it is exactly the same.
 If however put in code, it's harder to discover (if using the json keymap)
 
-*** TODO Fine tune tap-hold configuration
-:PROPERTIES:
-:CREATED:  [2022-12-24 Sat 17:25]
-:END:
-
-Notably the Z and / key which double up as left and right shift modifier when hold have some issues:
-
-- +when used with other modifiers like Layer modifiers the order in which the modifiers are typed seems to be important, which sucks+
-  Solved with transparent SHIFT keys in layer 1 for the most part.
-
-  https://docs.qmk.fm/#/tap_hold has lots of informatieon.
-
 *** TODO Enter hold sometimes fails (timing?)
 :PROPERTIES:
 :CREATED:  [2022-12-25 Sun 11:06]
