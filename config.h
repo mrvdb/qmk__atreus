@@ -1,3 +1,12 @@
+// I have certainly less than 8 layers
+#define LAYER_STATE_8BIT
+
+// Once I have a MX lock key, I'll spent those 400 bytes yo.
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+// Not using one shot actions so far
+#define NO_ACTION_ONESHOT
 #if defined(AUTO_SHIFT_ENABLE)
   #define AUTO_SHIFT_TIMEOUT 175
   #define NO_AUTO_SHIFT_SPECIAL
