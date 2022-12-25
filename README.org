@@ -1,10 +1,13 @@
-* Build custom firmware for [[https://shop.keyboard.io/collections/keyboardio-atreus][keyboard.io model Atreus]] in two ways
+* Custom qmk firmware for [[https://shop.keyboard.io/collections/keyboardio-atreus][keyboard.io model Atreus]]
 
-1. Using a github action which takes  =atreus.json= and builds binary firmware
+I build the qmk firmware in two ways:
+
+1. Using a github action workflo which takes  =atreus.json= and builds binary firmware on each commit.
 2. A script (=build=) which uses a GUIX container to build it locally using qmk
 
+The rational for having two ways of building the firmware is to provide a backup and reference for the local setup as it is quite fragile still on my POWER9 powerpc64le machine. Another reason is verification, is the firmware built locally the same as the one built remotely.
 
-** Ad 1.
+** Ad 1. Github action workflow
 
 doc: https://docs.qmk.fm/#/newbs_building_firmware_workflow
 
@@ -19,32 +22,42 @@ Roughly how it works:
 - commit and push to github, github workflow will build the firmware and produce it as artifact
 
 
-** Ad 2
+** Ad 2. GUIX container based local build
 
-=build= shell script spawns a GUIX shell and builds firmware locally using =manifest.scm=
+The =[[/build][build]]= shell script spawns a GUIX shell and builds firmware locally using =manifest.scm=
 
-* Rationale:
-- provide backup for local setup which is fragile on powerpc64le / guix
-- have verification: take same json file, produce artifact and compare with locally build firwmare (deterministic?]
+Obviously, you'll need a working GUIX installation for this to be useful.
 
-* Misc
-Keymapping doc:
+** Implemented features
+
+Layers defined in the layout:
 
 - Layer 0 :: Base layer
 - Layer 1 :: Number keys, navigation and bracketing
 - Layer 2 :: Function layer, macros
-- Layer 3 :: Specials and dangerous key combinations\n
+- Layer 3 :: Specials and dangerous key combinations
 
-* TODO Make C-M-a easier
+[[file:res/layout.png][Layout]]
+
+Features implemented:
+- numeric keys are autoshifted; saves awkward key combinations.
+- leader configuration for =KC_APP= is defined, but not used. Not entirely sure how I want to use it yet.
+- =Shift-(= and =Shift-)= are overridden to give '<' and '>' so I can have a logical bracketing group of 4 keys in Layer 1.
+
+** TODO-list
+*** TODO Make C-M-a easier to type
 :PROPERTIES:
 :CREATED:  [2022-12-23 Fri 18:19]
 :END:
-The right alt key is actually alt-gr so that maps to =C-ä= instead of =C-M-a=
+I use this a lot in lisp programming, but not sure if this should be an emacs solution or a firmware/layout solution
 
-Either:
-- map C-ä to the same function as C-M-a
+The right alt key is actually =alt-gr= so that maps to =C-ä= instead of =C-M-a=
 
-* TODO Move reset-keyboard into code instead of keymap
+Possible solutions:
+- map =C-ä= to the same function as =C-M-a=
+- remap keys in layout somehow
+
+*** TODO Move reset-keyboard into code instead of keymap
 :PROPERTIES:
 :CREATED:  [2022-12-24 Sat 17:23]
 :END:
@@ -52,7 +65,7 @@ Either:
 Feels more in place in firmware code than in the keymapping, although factually it is exactly the same.
 If however put in code, it's harder to discover (if using the json keymap)
 
-* TODO Fine tune tap-hold configuration
+*** TODO Fine tune tap-hold configuration
 :PROPERTIES:
 :CREATED:  [2022-12-24 Sat 17:25]
 :END:
@@ -66,3 +79,16 @@ Notably the Z and / key which double up as left and right shift modifier when ho
 
 -
   afjdk;adfjk;
+
+*** TODO Include some images/ascii art of the layers layout
+:PROPERTIES:
+:CREATED:  [2022-12-25 Sun 11:02]
+:END:
+
+*** TODO Enter hold sometimes fails (timing?)
+:PROPERTIES:
+:CREATED:  [2022-12-25 Sun 11:06]
+:END:
+I use a tap/hold combination on the return/enter key. This sometimes fails when typing fast, leading not to the 'hold' key that was intended, but to a return being emitted. These are expensive mishaps, so perhaps adjust timing or remap.
+
+Mostly happens with the '=' key.
