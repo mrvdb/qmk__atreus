@@ -37,7 +37,7 @@ Layers defined in the layout:
 - Layer 2 :: Function layer, macros
 - Layer 3 :: Specials and dangerous key combinations
 
-[[file:res/layout.png][Layout]]
+[[file:res/layout.png]]
 
 Features implemented:
 - numeric keys are autoshifted; saves awkward key combinations.
