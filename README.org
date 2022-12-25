@@ -89,11 +89,6 @@ Notably the Z and / key which double up as left and right shift modifier when ho
 
   https://docs.qmk.fm/#/tap_hold has lots of informatieon.
 
-*** TODO Include some images/ascii art of the layers layout
-:PROPERTIES:
-:CREATED:  [2022-12-25 Sun 11:02]
-:END:
-
 *** TODO Enter hold sometimes fails (timing?)
 :PROPERTIES:
 :CREATED:  [2022-12-25 Sun 11:06]
