@@ -37,7 +37,19 @@ Layers defined in the layout:
 - Layer 2 :: Function layer, macros
 - Layer 3 :: Specials and dangerous key combinations
 
+Here's an attempt to jam everything in one picture.
+
 [[file:res/layout.png]]
+
+Legends:
+- lower left is normal key behaviour
+- top left is the shifted normal
+- green is the Fn layer, holding down the green Fn key (Mx is =Macro X=)
+- blue is Layer 1, holding down the L1 key
+- blue right center labels are normal L1 keys
+- blue right top is shifted L1 keys
+- labels displayed on "front" mean to /hold/ the key.
+
 
 Features implemented:
 - numeric keys are autoshifted; saves awkward key combinations.
