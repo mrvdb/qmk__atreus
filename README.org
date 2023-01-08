@@ -1,5 +1,7 @@
 * Custom qmk firmware for [[https://shop.keyboard.io/collections/keyboardio-atreus][keyboard.io model Atreus]]
 
+Document online location: https://github.com/mrvdb/qmk_atreus
+
 I build the qmk firmware in two ways:
 
 1. Using a github action workflow which takes  =atreus.json= and builds binary firmware on each commit.
@@ -21,7 +23,6 @@ Roughly how it works:
 
 - commit and push to github, github workflow will build the firmware and produce it as artifact
 
-
 ** Ad 2. GUIX container based local build
 
 The [[https://github.com/mrvdb/qmk_atreus/blob/main/build][build]] shell script spawns a GUIX shell and builds firmware locally using [[https://github.com/mrvdb/qmk_atreus/blob/main/manifest.scm][manifest.scm]]
@@ -42,6 +43,7 @@ Here's an attempt to jam everything in one picture.
 [[file:res/layout.png]]
 
 Image produced with: https://www.keyboard-layout-editor.com/
+
 Legends:
 - lower left is normal key behaviour
 - top left is the shifted normal
@@ -86,3 +88,13 @@ If however put in code, it's harder to discover (if using the json keymap)
 I use a tap/hold combination on the return/enter key. This sometimes fails when typing fast, leading not to the 'hold' key that was intended, but to a return being emitted. These are expensive mishaps, so perhaps adjust timing or remap.
 
 Mostly happens with the '=' key.
+
+*** TODO Mishaps with shifted sequences
+:PROPERTIES:
+:CREATED:  [2023-01-08 Sun 15:15]
+:END:
+
+Shifted key sequences are timing sensitive apparently, perhaps also because my z and / key are the left and right shift key respectively, so they require a hold period.
+
+What happens is not enirely clear yet, but the wrong character gets capitalized.
+(mostly the next in the sequence, leaving out the first entirely)
