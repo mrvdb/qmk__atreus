@@ -7,13 +7,17 @@
 
 // Not using one shot actions so far
 #define NO_ACTION_ONESHOT
+
+// Autoshifting fits well with my layout:
+// - numerics are shared with top row letters
+// - I want = to be autoshifted to + so I enabled the specials
 #if defined(AUTO_SHIFT_ENABLE)
   #define AUTO_SHIFT_TIMEOUT 175
-  #define NO_AUTO_SHIFT_SPECIAL
   #define NO_AUTO_SHIFT_ALPHA
   #define AUTO_SHIFT_NO_AUTO_REPEAT
 #endif // !AUTO_SHIFT_ENABLE
 
+// Why is this here?
 #if defined(KEY_OVERRIDE_ENABLE)
 #endif // !KEY_OVERRIDE_ENABLE
 
