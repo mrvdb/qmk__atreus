@@ -7,7 +7,7 @@ I build the qmk firmware in two ways:
 1. Using a github action workflow which takes  =atreus.json= and builds binary firmware on each commit.
 2. A script (=build=) which uses a GUIX container to build it locally using qmk
 
-The rational for having two ways of building the firmware is to provide a backup and reference for the local setup as it is quite fragile still on my POWER9 powerpc64le machine. Another reason is verification, is the firmware built locally the same as the one built remotely.
+The rationale for having two ways of building the firmware is to provide a backup and reference for the local setup as it is quite fragile still on my POWER9 powerpc64le machine. Another reason is verification, is the firmware built locally the same as the one built remotely.
 
 ** Ad 1. Github action workflow
 
@@ -45,7 +45,7 @@ Here's an attempt to jam everything in one picture.
 Image produced with: https://www.keyboard-layout-editor.com/
 
 Legends:
-- lower left is normal key behaviour
+- lower left is normal key behavior
 - top left is the shifted normal
 - green is the Fn layer, holding down the green Fn key (Mx is =Macro X=)
 - blue is Layer 1, holding down the L1 key
@@ -55,7 +55,7 @@ Legends:
 
 
 Features implemented:
-- numeric keys are autoshifted; saves awkward key combinations.
+- numeric keys are auto-shifted; saves awkward key combinations.
 - leader configuration for =KC_APP= is defined, but not used. Not entirely sure how I want to use it yet.
 - =Shift-(= and =Shift-)= are overridden to give '<' and '>' so I can have a logical bracketing group of 4 keys in Layer 1.
 - there are 5 macro keys, 3 are fixed and defined in the firmware, 2 (M3 and M4) are dynamic and can be recorded using the R3 and R4 keys. steps: R4, ...record..., R4 M4 -> plays recorded keys back.
@@ -65,7 +65,7 @@ Features implemented:
 :PROPERTIES:
 :CREATED:  [2022-12-23 Fri 18:19]
 :END:
-I use this a lot in lisp programming, but not sure if this should be an emacs solution or a firmware/layout solution
+I use this a lot in lisp programming, but not sure if this should be an Emacs solution or a firmware/layout solution
 
 The right alt key is actually =alt-gr= so that maps to =C-ä= instead of =C-M-a=
 
