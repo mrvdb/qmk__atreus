@@ -11,7 +11,8 @@ DEVICE=/dev/ttyACM0
 
 echo "Put the device in bootloader mode; hold ESC and press K, keep pressing ESC"
 # This only works with QMK, not with Kaleidoscope
-udevadm wait $DEVICE
+# Must use an udevadm version which has wait implemented
+/usr/bin/udevadm wait $DEVICE
 
 
 # This works, manually unplugging the board and plugging back in with ESC pressed
