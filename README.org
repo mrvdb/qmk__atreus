@@ -60,8 +60,8 @@ Features implemented:
 - =Shift-(= and =Shift-)= are overridden to give '<' and '>' so I can have a logical bracketing group of 4 keys in Layer 1.
 - there are 5 macro keys, 3 are fixed and defined in the firmware, 2 (M3 and M4) are dynamic and can be recorded using the R3 and R4 keys. steps: R4, ...record..., R4 M4 -> plays recorded keys back.
 -
-** TODO-list
-*** TODO Make C-M-a easier to type
+** TODO-list                                                                        :keyboard:
+*** TODO Make C-M-a easier to type                                                      :fix:
 :PROPERTIES:
 :CREATED:  [2022-12-23 Fri 18:19]
 :END:
@@ -73,7 +73,7 @@ Possible solutions:
 - map =C-ä= to the same function as =C-M-a=
 - remap keys in layout somehow
 
-*** TODO Move reset-keyboard into code instead of keymap
+*** TODO Move reset-keyboard into code instead of keymap                                :fix:
 :PROPERTIES:
 :CREATED:  [2022-12-24 Sat 17:23]
 :END:
@@ -81,7 +81,7 @@ Possible solutions:
 Feels more in place in firmware code than in the keymapping, although factually it is exactly the same.
 If however put in code, it's harder to discover (if using the json keymap)
 
-*** TODO Enter hold sometimes fails (timing?)
+*** TODO Enter hold sometimes fails (timing?)                                           :fix:
 :PROPERTIES:
 :CREATED:  [2022-12-25 Sun 11:06]
 :END:
@@ -89,12 +89,16 @@ I use a tap/hold combination on the return/enter key. This sometimes fails when 
 
 Mostly happens with the '=' key.
 
-*** TODO Mishaps with shifted sequences
+See also [[Shift timing for z and / keys may be off a bit]]
+*** TODO Shift timing for z and / keys may be off a bit                                 :fix:
 :PROPERTIES:
-:CREATED:  [2023-01-08 Sun 15:15]
+:CREATED:  [2023-01-18 Wed 14:17]
 :END:
 
-Shifted key sequences are timing sensitive apparently, perhaps also because my z and / key are the left and right shift key respectively, so they require a hold period.
+Observed:
+1. meaning to type z, but getting a capitalized next letter
+  -> falsely selecting hold over tap
+2. meaning to type (, but getting a return and the letter f
+  -> falsely selecting tap over hold
 
-What happens is not enirely clear yet, but the wrong character gets capitalized.
-(mostly the next in the sequence, leaving out the first entirely)
+The latter is definitely more disrupting than the first. Not sure if it is more frequent though.
