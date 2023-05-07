@@ -1,3 +1,5 @@
+[[https://github.com/mrvdb/qmk_atreus/actions/workflows/build.yml][https://github.com/mrvdb/qmk_atreus/actions/workflows/build.yml/badge.svg]]
+
 * Custom qmk firmware for [[https://shop.keyboard.io/collections/keyboardio-atreus][keyboard.io model Atreus]]
 
 Document online location: https://github.com/mrvdb/qmk_atreus
