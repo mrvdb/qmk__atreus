@@ -81,10 +81,23 @@
                (base32
                 "1mn97h370ggbc9vi6x8r6akd5q8i512y6kid2nvm67g93r9a6rvv"))))
     (build-system python-build-system)
-    (native-inputs (list python-coverage python-nose python-pylint python-tox
-                         python-twine))
-    (propagated-inputs (list python-log-symbols python-spinners
-                             python-termcolor python-colorama python-six))
+    (arguments
+     `(#:tests? #f))
+    (native-inputs (list
+                    python-coverage
+                    python-nose
+                    python-pylint
+                    python-tox
+                    ;; FIXME causes powerpc64le not supported? Depends on rust. Sigh.
+                    ;python-twine
+                    ))
+    (propagated-inputs (list
+                        python-log-symbols
+                        python-spinners
+                        python-termcolor
+                        python-colorama
+                        python-six
+                        ))
     (home-page "https://github.com/manrajgrover/halo")
     (synopsis "Beautiful spinners for terminal, IPython and Jupyter")
     (description "Beautiful spinners for terminal, IPython and Jupyter.")
@@ -128,8 +141,13 @@
                (base32
                 "007hdwp659s1wfld92pxdgjz9ijvh949wyf1cbmyzkma30vng8d4"))))
     (build-system python-build-system)
-    (propagated-inputs (list python-appdirs python-argcomplete python-colorama
-                             python-halo python-spinners))
+    (propagated-inputs (list
+                        python-appdirs
+                        python-argcomplete
+                        python-colorama ; redundant?
+                        python-halo
+                        python-spinners
+                        ))
     (home-page "https://milc.clueboard.co/")
     (synopsis "Batteries-Included Python 3 CLI Framework")
     (description
@@ -213,7 +231,7 @@
                              python-milc
                              python-setuptools
                              python-hjson
-                             python-jsonschema-next ;Need this to prevent 3.2.0 egg info going into the store which borks sanity-check
+                             python-jsonschema
                              python-pygments
                              python-dotty-dict))
     (home-page "https://qmk.fm/")
