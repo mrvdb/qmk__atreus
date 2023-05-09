@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container: qmkfm/qmk_cli
     strategy:
       fail-fast: false
@@ -18,6 +18,7 @@ jobs:
     - name: Checkout QMK
       uses: actions/checkout@v3
       with:
+        ref: 'cc9520b7a02ccdc97f79a800de04ff4ea15f2656'
         repository: qmk/qmk_firmware
         submodules: recursive
 
