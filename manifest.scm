@@ -260,7 +260,7 @@
                           ;; For the atreus, dont need the arm toolchain and there is a bug that only the last one goes
                           ;; See: https://issues.guix.org/
                           ;; arm-none-eabi-toolchain@6.5.0
-                          avr-toolchain
+                          (make-avr-toolchain)
                           glibc
                           gcc-toolchain
 
