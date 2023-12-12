@@ -24,51 +24,11 @@
                      python
                      python-xyz
                      python-build
-                     python-check)
+                     python-check
+                     terminals
+                     firmware)
 
 ;; Define packages which are not yet packaged up in GUIX
-(define python-dotty-dict
-  (package
-    (name "python-dotty-dict")
-    (version "1.3.1")
-    (source (origin
-              (method url-fetch)
-              (uri (pypi-uri "dotty_dict" version))
-              (sha256
-               (base32
-                "058sah2nyg44xq5wxywlzc3abzcv9fifnlvsflwma9mfp01nw0ab"))))
-    (build-system python-build-system)
-    (home-page "https://github.com/pawelzny/dotty_dict")
-    (synopsis "Dictionary wrapper for quick access to deeply nested keys")
-    (description "fork needed?")
-    (license expat)))
-
-(define python-log-symbols
-  (package
-    (name "python-log-symbols")
-    (version "0.0.14")
-    (source (origin
-              (method url-fetch)
-              (uri (pypi-uri "log_symbols" version))
-              (sha256
-               (base32
-                "0mh5d0igw33libfmbsr1ri1p1y644p36nwaa2w6kzrd8w5pvq2yg"))))
-    (build-system python-build-system)
-    (arguments
-     `(#:phases (modify-phases %standard-phases
-                  (add-before 'build 'patch-requirements-dev-txt
-                    (lambda _
-                      ;; Update requirements from dependency==version
-                      ;; to dependency>=version
-                      (substitute* "requirements-dev.txt"
-                        (("==")
-                         ">=")) #t)))))
-    (native-inputs (list python-coverage python-nose python-pylint python-tox))
-    (propagated-inputs (list python-colorama))
-    (home-page "https://github.com/manrajgrover/py-log-symbols")
-    (synopsis "Colored symbols for various log levels for Python")
-    (description "Colored symbols for various log levels for Python.")
-    (license expat)))
 
 (define python-halo
   (package
@@ -154,61 +114,6 @@
      "MILC is a framework for writing CLI applications in Python 3.6+.  It gives you all the features users expect from a modern CLI tool out of the box.")
     (license expat)))
 
-(define python-hjson
-  (package
-    (name "python-hjson")
-    (version "3.0.2")
-    (source (origin
-              ;; Sources on pypi don't contain data files for tests
-              (method git-fetch)
-              (uri (git-reference
-                    (url "https://github.com/hjson/hjson-py")
-                    (commit (string-append "v" version))))
-              (file-name (git-file-name name version))
-              (sha256
-               (base32
-                "1jc7j790rcqnhbrfj4lhnz3f6768dc55aij840wmx16jylfqpc2n"))))
-    (build-system python-build-system)
-    (home-page "http://github.com/hjson/hjson-py")
-    (synopsis "Human JSON implementation for Python")
-    (description
-     "Hjson is a syntax extension to JSON.  It is intended to be used like a user interface for humans, to read and edit before passing the JSON data to the machine.  This package contains a Python library for parsing and generating Hjson.")
-    (license expat)))
-
-(define python-hid
-  (package
-    (name "python-hid")
-    (version "1.0.5")
-    (source (origin
-              (method url-fetch)
-              (uri (pypi-uri "hid" version))
-              (sha256
-               (base32
-                "1s5hvfbmnlmifswr5514f4xxn5rcd429bdcdqzgwkdxrg9zlx58y"))))
-    (build-system python-build-system)
-    (arguments
-     `(#:modules ((srfi srfi-1)
-                  (srfi srfi-26)
-                  (guix build utils)
-                  (guix build python-build-system))
-       #:phases (modify-phases %standard-phases
-                  (add-after 'unpack 'fix-hidapi-reference
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (substitute* "hid/__init__.py"
-                        (("library_paths = \\(")
-                         (string-append "library_paths = ('"
-                                        (find (negate symbolic-link?)
-                                              (find-files (assoc-ref inputs
-                                                                     "hidapi")
-                                               "^libhidapi-.*\\.so\\..*"))
-                                        "',"))) #t)))))
-    (inputs (list hidapi))
-
-    (native-inputs `(("python-nose" ,python-nose)))
-    (home-page "https://github.com/apmorton/pyhidapi")
-    (synopsis "hidapi bindings in ctypes")
-    (description "Python wrapper for the hidapi library using ctypes.")
-    (license expat)))
 
 (define python-qmk
   (package
