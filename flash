@@ -9,7 +9,8 @@
 
 DEVICE=/dev/ttyACM0
 
-echo "Put the device in bootloader mode; hold ESC and press K, keep pressing ESC"
+# QK boot is selected from layer 3 (zero-based) thus, L1 selector puts L3 on enter, then K in layer 3
+echo "Put the device in bootloader mode; hold ESC and Enter and press K, keep pressing ESC/Enter"
 # This only works with QMK, not with Kaleidoscope
 # Must use an udevadm version which has wait implemented
 /usr/bin/udevadm wait $DEVICE
