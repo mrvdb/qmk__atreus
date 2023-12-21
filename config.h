@@ -25,3 +25,8 @@
   #define LEADER_PER_KEY_TIMING
   #define LEADER_TIMEOUT 750
 #endif // !LEADER_ENABLE
+
+
+// typing / e in succession often outputs E, thus triggering the modifier instead of the tap
+// https://docusaurus.qmk.fm/tap_hold#ignore-mod-tap-interrupt seems the usecase her
+#define IGNORE_MOD_TAP_INTERRUPT

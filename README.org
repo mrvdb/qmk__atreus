@@ -90,17 +90,3 @@ If however put in code, it's harder to discover (if using the json keymap)
 I use a tap/hold combination on the return/enter key. This sometimes fails when typing fast, leading not to the 'hold' key that was intended, but to a return being emitted. These are expensive mishaps, so perhaps adjust timing or remap.
 
 Mostly happens with the '=' key.
-
-See also [[Shift timing for z and / keys may be off a bit]]
-*** TODO Shift timing for z and / keys may be off a bit                                 :fix:
-:PROPERTIES:
-:CREATED:  [2023-01-18 Wed 14:17]
-:END:
-
-Observed:
-1. meaning to type z, but getting a capitalized next letter
-  -> falsely selecting hold over tap
-2. meaning to type (, but getting a return and the letter f
-  -> falsely selecting tap over hold
-
-The latter is definitely more disrupting than the first. Not sure if it is more frequent though.
