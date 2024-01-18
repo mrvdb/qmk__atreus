@@ -30,3 +30,6 @@
 // typing / e in succession often outputs E, thus triggering the modifier instead of the tap
 // https://docusaurus.qmk.fm/tap_hold#ignore-mod-tap-interrupt seems the usecase her
 #define IGNORE_MOD_TAP_INTERRUPT
+
+// But give the hold some more chance as another key is pressed
+#define HOLD_ON_OTHER_KEY_PRESS
