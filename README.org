@@ -83,10 +83,3 @@ Possible solutions:
 Feels more in place in firmware code than in the keymapping, although factually it is exactly the same.
 If however put in code, it's harder to discover (if using the json keymap)
 
-*** TODO Enter hold sometimes fails (timing?)                                           :fix:
-:PROPERTIES:
-:CREATED:  [2022-12-25 Sun 11:06]
-:END:
-I use a tap/hold combination on the return/enter key. This sometimes fails when typing fast, leading not to the 'hold' key that was intended, but to a return being emitted. These are expensive mishaps, so perhaps adjust timing or remap.
-
-Mostly happens with the '=' key.
